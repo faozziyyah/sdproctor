@@ -1,3 +1,97 @@
+header, #hero, #about{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  padding: 1em;
+}
+
+header{
+  align-items: center;
+}
+
+#logo1{
+  width: 12%;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+}
+
+.link{
+  text-decoration: none;
+  color: #03045e;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+#contact{
+  background-color: #ff9e00;
+  color: #fff;
+  padding: 1em 2em;
+}
+
+#hero > article > h2, #about > article > h2{
+  font-size: 30px;
+}
+
+#about > article > h2 {
+  color: #ff9e00;
+}
+
+#hero > article > h2{
+  color: #03045e;
+  width: 50%;
+  margin-top: 2.5em;
+}
+
+#hero > article > p{
+  color: #03045e;
+  font-size: 18px;
+  width: 50%;
+  margin-top: 2em;
+}
+
+#hero > article > button{
+  background-color: #ff9e00;
+  color: #03045e;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  font-size: 18px;
+  width: 40%;
+  margin-top: 3em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#hero > img {
+  width: 40%;
+}
+
+#about{
+  background-color: #03045e;
+  padding: 3em 3em 0 3em;
+}
+
+#about > img {
+  width: 50%;
+}
+
+#about > article{
+  width: 35%;
+}
+
+#about > article > p{
+  color: #fff;
+  width: 70%;
+  font-size: 15px;
+  font-weight: 600;
+}
+
 .register-container{
   display: flex;
   justify-content: space-between;
@@ -103,4 +197,23 @@ input::placeholder{
 .enquiry > a {
   text-decoration: none;
   color: #ff9e00;
+}
+
+.identity{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#image1{
+  width: 70%;
+  margin: auto;
+  align-self: center;
+}
+
+.verifyp{
+  color: #ff9e00;
+  font-weight: bold;
+  font-size: 15px;
 }
