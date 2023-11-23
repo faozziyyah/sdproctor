@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../images/logo.png'
 import image from '../images/Sign up-rafiki (1) 1.png'
+import { Link } from 'react-router-dom'
 
 const Register = () => {
   return (
@@ -32,7 +33,7 @@ const Register = () => {
                 <input type='text' placeholder='Confirm Password' />
             </fieldset>
 
-            <button className='register-btn'>Register</button>
+            <Link className='register-btn' to='/identification'>Register</Link>
 
         </form>
 

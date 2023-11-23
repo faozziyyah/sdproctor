@@ -92,6 +92,73 @@ nav{
   font-weight: 600;
 }
 
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  width: 30%;
+  margin-top: 8em;
+  border: 2px solid #03045e;
+  border-radius: 8px;
+  box-shadow: 1px 1px 1px #31337e;
+}
+
+.card > img {
+  position: absolute;
+  z-index: 9999;
+  top: -3em;
+  width: 30%;
+}
+
+.card > h2 {
+  color: #03045e;
+  font-size: 25px;
+  font-weight: bolder;
+  margin-top: 3em;
+}
+
+.image5, .image6, .image7{
+  border-radius: 50%;
+  padding: 1.5em 1em;
+  position: absolute;
+  z-index: 9999;
+  top: -2.5em;
+}
+
+.image5{
+  background-color: rgb(39, 45, 129);
+}
+
+.image6{
+  background-color: #03045e;
+}
+
+.image7{
+  background-color: #ff9e00;
+}
+
+.card > div > img {
+  width: 80%;
+}
+
+.card > p {
+  color: #11112e;
+  font-size: 15px;
+  width: 90%;
+}
+
+.whysd{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+  margin-top: 6em;
+}
+
 .register-container{
   display: flex;
   justify-content: space-between;
@@ -148,9 +215,10 @@ input::placeholder{
   justify-content: center;
   align-items: center;
   text-align: center;
+  text-decoration: none;
   border: none;
   outline: none;
-  width: 100%;
+  width: 95%;
   margin: auto;
   margin-top: 3em;
   padding: 1em;
