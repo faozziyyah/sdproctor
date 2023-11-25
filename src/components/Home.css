@@ -1,0 +1,266 @@
+header, #hero, #about{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    padding: 1em;
+  }
+  
+  header{
+    align-items: center;
+  }
+  
+  #logo1{
+    width: 12%;
+  }
+  
+  nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+  }
+  
+  .link{
+    text-decoration: none;
+    color: #03045e;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  
+  #contact{
+    background-color: #ff9e00;
+    color: #fff;
+    padding: 1em 2em;
+  }
+  
+  #hero > article > h2, #about > article > h2{
+    font-size: 30px;
+  }
+  
+  #about > article > h2 {
+    color: #ff9e00;
+  }
+  
+  #hero > article > h2{
+    color: #03045e;
+    width: 50%;
+    margin-top: 2.5em;
+  }
+  
+  #hero > article > p{
+    color: #03045e;
+    font-size: 18px;
+    width: 50%;
+    margin-top: 2em;
+  }
+  
+  #hero > article > button{
+    background-color: #ff9e00;
+    color: #03045e;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    font-size: 18px;
+    width: 40%;
+    margin-top: 3em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  #hero > img {
+    width: 40%;
+  }
+  
+  #about{
+    background-color: #03045e;
+    padding: 3em 3em 0 3em;
+  }
+  
+  #about > img {
+    width: 50%;
+  }
+  
+  #about > article{
+    width: 35%;
+  }
+  
+  #about > article > p{
+    color: #fff;
+    width: 70%;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  
+  .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 30%;
+    margin-top: 8em;
+    border: 2px solid #03045e;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px #31337e;
+  }
+  
+  .card > img {
+    position: absolute;
+    z-index: 9999;
+    top: -3em;
+    width: 30%;
+  }
+  
+  .card > h2 {
+    color: #03045e;
+    font-size: 25px;
+    font-weight: bolder;
+    margin-top: 3em;
+  }
+  
+  .image5, .image6, .image7{
+    border-radius: 50%;
+    padding: 1.5em 1em;
+    position: absolute;
+    z-index: 9999;
+    top: -2.5em;
+  }
+  
+  .image5{
+    background-color: rgb(39, 45, 129);
+  }
+  
+  .image6{
+    background-color: #03045e;
+  }
+  
+  .image7{
+    background-color: #ff9e00;
+  }
+  
+  .card > div > img {
+    width: 80%;
+  }
+  
+  .card > p {
+    color: #11112e;
+    font-size: 15px;
+    width: 90%;
+  }
+  
+  .whysd{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    flex-wrap: wrap;
+    margin-top: 6em;
+  }
+  
+  #aboutsd, .contact{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    margin-top: 3em;
+  }
+  
+  #aboutsd > h2, .contact > h2 {
+    color: #03045e;
+    font-size: 30px;
+  }
+  
+  #aboutsd > p {
+    color: #03045e;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: -1em;
+  }
+  
+  .features{
+    background-color: #03045e;
+    display: flex;
+    width: 90%;
+    margin: auto;
+    height: 500px;
+    color: #fff;
+    margin-top: 2em;
+    padding: 2em 2em 0em 2em;
+    justify-content: space-between;
+  }
+
+  .features > article {
+    width: 40%;
+  }
+
+  .about-content{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  .about-content > img {
+    width: 3%;
+    height: 10px;
+    margin-top: 1.5em;
+  }
+
+  .about-content > p {
+    width: 95%;
+    font-size: 14px;
+  }
+
+  .features > img {
+    width: 40%;
+    margin-top: -5em;
+  }
+
+  .features1{
+    background-color: #03045e;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    padding: 2em 2em 0em 2em;
+  }
+
+  .features1 > img {
+    width: 40%;
+  }
+
+#contact-article{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    text-align: right;
+}
+
+.contact-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.p1 {
+    color: #ff9e00;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.p2, .p3{
+    color: #fff;
+    width: 70%;
+    font-size: 15px;
+}
+
+.p3, .p4{
+    margin-top: -1em;
+}
+
+.p4{
+    color: #00b4bd;
+    font-size: 15px;
+    font-weight: 600;
+}
