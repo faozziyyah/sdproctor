@@ -1,0 +1,27 @@
+.exam-container{
+    background-color: #03045e;
+    display: flex;
+    flex-direction: column;
+}
+
+.exam-header{
+    background-color: #fff;
+    color: #03045e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+}
+
+.header-right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+}
