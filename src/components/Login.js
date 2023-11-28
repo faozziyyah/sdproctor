@@ -1,8 +1,44 @@
-import React from 'react'
+import React,{ useState } from 'react'
+import axios from "axios";
 import logo from '../images/logo.png'
 import image from '../images/Computer login-rafiki 1.png'
 
 const Login = () => {
+
+    const [data, setData] = useState({ username: "", password: "" });
+
+    const handleChange = (e) => {
+      const value = e.target.value;
+      setData({
+        ...data,
+        [e.target.name]: value
+      });
+    };
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const userData = {
+        username: data.username,
+        password: data.password
+      };
+      axios
+        .post("https://demo.schautomate.com.ng/login", userData)
+        .then((response) => {
+          //console.log(response.status, response.data.token);
+          console.log(response, response.data.token);
+        })
+        .catch((error) => {
+          if (error.response) {
+            console.log(error.response);
+            console.log("server responded");
+          } else if (error.request) {
+            console.log("network error");
+          } else {
+            console.log(error);
+          }
+        });
+    };
+
   return (
     <div className='register-container'>
 
@@ -10,19 +46,29 @@ const Login = () => {
 
         <h2>login</h2>
 
-        <form>
+        <form onSubmit={handleSubmit}>
 
             <fieldset>
-                <legend>Email</legend>
-                <input type='email' placeholder='Enter your email address here' />
+                <legend>Username</legend>
+                <input type='email' 
+                    placeholder='Enter your email address here' 
+                    name='username' value={data.username} 
+                    required
+                    onChange={handleChange}
+                />
             </fieldset>
 
             <fieldset>
                 <legend>Password</legend>
-                <input type='password' placeholder='Enter your password here' />
+                <input type='password' 
+                    placeholder='Enter your password here' 
+                    name='password'
+                    value={data.password} required
+                    onChange={handleChange}
+                />
             </fieldset>
 
-            <button className='login-btn'>Login</button>
+            <button type='submit' className='login-btn'>Login</button>
 
             <p className='enquiry'>Don't have an account ? <a href='http'>Register</a></p>
 
@@ -40,4 +86,4 @@ const Login = () => {
   )
 }
 
-export { Login }
+export {Login} 

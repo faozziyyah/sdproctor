@@ -8,6 +8,7 @@ import { Upload } from './components/Upload';
 import { Verify } from './components/Verify';
 import { Home } from './components/Home';
 import { Exam } from './components/Exam';
+import { Logout } from './components/Logout';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/upload' element={<Upload />} />
         <Route path='/verify' element={<Verify />} />
         <Route path='/exam' element={<Exam />} />
+        <Route path="/logout" element={<Logout/>}/>
       </Routes>
     </>
   );

@@ -1,5 +1,7 @@
-import React from 'react'
+import React,{ useEffect, useState } from 'react'
 import './Home.css';
+import axios from 'axios'
+import { useNavigate } from "react-router-dom"
 import { Navbar } from './Navbar'
 import image from '../images/Editing body text-rafiki 1.png'
 import image1 from '../images/Group 72.png'
@@ -17,6 +19,28 @@ import { Card } from './Card'
 import { Footer } from './Footer';
 
 const Home = () => {
+
+    const navigate = useNavigate();
+    const [user, setUser] = useState({})
+ 
+    useEffect(()=>{
+        if(localStorage.getItem('token') === "" || localStorage.getItem('token') == null){
+            navigate("/");
+        }else {
+            getUser()
+        }
+    },[])
+ 
+    const getUser = () => {
+        axios.get('https://demo.schautomate.com.ng/login', { headers:{Authorization: 'Bearer ' + localStorage.getItem('token')}})
+        .then((r) => {
+           setUser(r.data)
+        })
+        .catch((e) => {
+            console.log(e)
+        });
+    }
+
   return (
     <>
 
