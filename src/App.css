@@ -150,11 +150,11 @@ footer{
   display: flex;
   justify-content: space-between;
   width: 60%;
+  margin-top: 1em;
 }
 
-ion-icon{
-  border: 1px solid #fff;
-  border-radius: 50%;
+.icons img{
+  width: 20%;
 }
 
 #link1{

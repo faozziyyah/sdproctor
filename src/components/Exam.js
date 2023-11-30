@@ -1,26 +1,92 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { Radio, Space } from 'antd';
+import ReactPaginate from 'react-paginate';
 import image from '../images/Ellipse 1.png'
-import { Link } from 'react-router-dom'
+import circle from '../images/Ellipse 3.png'
+import { useNavigate } from 'react-router-dom'
 import videocam from '../images/fluent_video-48-regular.png'
 import './Exam.css';
+import { Timer } from './Timer';
 
 const Exam = () => {
+
+  const [value, setValue] = useState(1);
+
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const [ questions, setQuestions ] = useState([])
+
+  const n = 1
+
+  const duration = 60
+
+  const handlePageChange = (selectedPage) => {
+    setCurrentPage(selectedPage.selected);
+  };
+
+  const onChange = (e) => {
+    console.log('radio checked', e.target.value);
+    setValue(e.target.value);
+  };
+
+  useEffect(() => {
+
+    const getQuestions = async () => {
+      const response = await fetch(
+        'https://demo.schautomate.com.ng/api/exam'
+      );
+      const data = await response.json();
+      setQuestions(data);
+      //setTotalPages(Math.ceil(data.length / n))
+    };
+
+    getQuestions();
+
+      //fetch("https://demo.schautomate.com.ng/api/exam", {
+      //    method: "GET",
+      //    headers: {
+      //        "content-type": "application/json",
+      //    }
+      //}).then(response => response.json())
+      //
+      //.then(response => console.log(response))
+      //.then(response => setQuestions(response))
+      //.catch(error => console.log(error))
+
+  }, [currentPage]) 
+
+  const offset = currentPage * n;
+  const paginatedData = questions.slice(offset, offset + n);
+
+  //console.log(questions);
+
+  const navigate = useNavigate()
+
+  function logout () {
+    localStorage.clear()
+    navigate('/')
+  }
+
   return (
     <div className='exam-container'>
+
+      <div className='exam-nav'>
+        <img src={circle} alt='' />
+      </div>
 
       <section className='exam-header'>
 
         <div className='header-left'>
 
           <img src={image} alt='' />
-          <p>welcome Adebimpr</p>
+          <p>welcome Adebimpe</p>
 
         </div>
 
         <div className='header-right'>
 
-          <p>0hrs: 05mins: 60seconds</p>
-          <Link to='/logout'>Logout</Link>
+				  <Timer initialMinute={duration} />
+          <button className='btn-logout' onClick={logout}>Log out</button>
 
         </div>
 
@@ -28,37 +94,50 @@ const Exam = () => {
 
       <section className='exam-body'>
 
-        <div className='body-left'>
+        <div className='exam-contents'>
 
-          <h2>question 1</h2>
-          <p>A data type that can be used to declare a minimum of 10 million characters is called ?</p>
+          <div className='body-left'>
+            
+            {paginatedData.map((question, id) => {
+                return (
+                
+                  <div key={id} className="project">
+                
+                      <h2>question {question.id}</h2>
+                      
+                      <p>{question.question}</p>
+                      
+                      <Radio.Group onChange={onChange} value={value}>
+                        <Space direction="vertical">
+                          <Radio value={question.opt1} style={{color: '#03045e', fontSize: '15px', fontWeight: '500'}}>{question.opt1}</Radio>
+                          <Radio value={question.opt2} style={{color: '#03045e', fontSize: '15px', fontWeight: '500'}}>{question.opt2}</Radio>
+                          <Radio value={question.opt3} style={{color: '#03045e', fontSize: '15px', fontWeight: '500'}}>{question.opt3}</Radio>
+                          <Radio value={question.opt4} style={{color: '#03045e', fontSize: '15px', fontWeight: '500'}}>{question.opt4}</Radio>
+                        </Space>
+                      </Radio.Group>
+                
+                  </div>
+                
+                )
+            })}
           
-          <div>
-            <input type='radio' value='letters' />
-            <label for='letters'>Letters</label>
           </div>
           
-          <div>
-            <input type='radio' value='Codes' />
-            <label for='Codes'>Codes</label>
-          </div>
-          
-          <div>
-            <input type='radio' value='Strings' />
-            <label for='Strings'>Strings</label>
-          </div>
-          
-          <div>
-            <input type='radio' value='Numerics' />
-            <label for='Numerics'>Numerics</label>
+          <div className='body-right'>
+            <img src={videocam} alt='' />
           </div>
 
         </div>
 
-        <img src={videocam} alt='' />
+        <ReactPaginate
+          pageCount={Math.ceil(questions.length / n)}
+          onPageChange={handlePageChange}
+          containerClassName="pagination"
+          activeClassName="active"
+        />
 
       </section>
-
+      
     </div>
   )
 }

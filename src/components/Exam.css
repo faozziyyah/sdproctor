@@ -4,12 +4,29 @@
     flex-direction: column;
 }
 
+.exam-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4%;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border: 6px solid #ffffff;
+    border-radius: 50%;
+}
+
+.exam-nav > img {
+    width: 80%;
+}
+
 .exam-header{
     background-color: #fff;
     color: #03045e;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1em 4em;
 }
 
 .header-left{
@@ -19,9 +36,98 @@
     width: 20%;
 }
 
+.header-left > img {
+    width: 25%;
+}
+
+.header-left > p, .title-heading {
+    font-size: 18px;
+    font-weight: 600;
+}
+
 .header-right{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 30%;
+}
+
+.btn-logout {
+    text-decoration: none;
+    background-color: #E91818;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 2em;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    text-transform: uppercase;
+}
+
+.exam-body{
+    background-color: #fff;
+    color: #03045e;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    border-radius: 10px;
+    padding: 3em;
+}
+
+.exam-contents{
+    display: flex;
+    justify-content: space-between;
+}
+
+.body-left{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.project > h2{
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.project > p{
+    font-size: 18px;
+    font-weight: 600;
+    width: 90%;
+}
+
+input{
+    margin-left: 2em;
+}
+
+.body-right{
+    background-color: #dad6d6ee;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 300px;
+    position: relative;
+    top: -5em;
+}
+
+.body-right > img {
+    width: 60%;
+}
+
+.pagination{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    width: 50%;
+    margin: auto;
+    margin-top: 3em;
+    cursor: pointer;
 }

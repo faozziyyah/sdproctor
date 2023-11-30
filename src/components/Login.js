@@ -1,4 +1,5 @@
-import React,{ useState } from 'react'
+import React,{ useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from "axios";
 import logo from '../images/logo.png'
 import image from '../images/Computer login-rafiki 1.png'
@@ -6,6 +7,14 @@ import image from '../images/Computer login-rafiki 1.png'
 const Login = () => {
 
     const [data, setData] = useState({ username: "", password: "" });
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+      if (localStorage.getItem('user-info')) {
+        navigate("/exam")
+      }
+    }, [])
 
     const handleChange = (e) => {
       const value = e.target.value;
@@ -26,6 +35,8 @@ const Login = () => {
         .then((response) => {
           //console.log(response.status, response.data.token);
           console.log(response, response.data.token);
+          localStorage.setItem('user-info', JSON.stringify(response))
+          navigate("/exam")
         })
         .catch((error) => {
           if (error.response) {
