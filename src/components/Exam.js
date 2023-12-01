@@ -4,9 +4,10 @@ import ReactPaginate from 'react-paginate';
 import image from '../images/Ellipse 1.png'
 import circle from '../images/Ellipse 3.png'
 import { useNavigate } from 'react-router-dom'
-import videocam from '../images/fluent_video-48-regular.png'
+//import videocam from '../images/fluent_video-48-regular.png'
 import './Exam.css';
 import { Timer } from './Timer';
+import { ImageCapture } from './Capturing';
 
 const Exam = () => {
 
@@ -124,7 +125,7 @@ const Exam = () => {
           </div>
           
           <div className='body-right'>
-            <img src={videocam} alt='' />
+            <ImageCapture />
           </div>
 
         </div>

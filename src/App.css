@@ -24,27 +24,28 @@
   color: #03045e;
 }
 
-fieldset{
+.registration fieldset{
   margin-top: 2em;
   border: 2px solid #03045e;
 }
 
-legend{
+.registration legend{
   color: #03045e;
   font-weight: 500;
   font-size: 15px;
 }
 
-input{
+.registration input{
   border: none;
   outline: none;
   background-color: transparent;
   width: 100%;
+  margin: auto;
   height: 30px;
   font-size: 15px;
 }
 
-input::placeholder{
+.registration input::placeholder{
   font-size: 15px;
   color: #505181;
 }
@@ -57,7 +58,7 @@ input::placeholder{
   text-decoration: none;
   border: none;
   outline: none;
-  width: 95%;
+  width: 100%;
   margin: auto;
   margin-top: 3em;
   padding: 1em;
@@ -82,10 +83,7 @@ input::placeholder{
 }
 
 #logo{
-  width: 20%;
-  align-self: flex-end;
-  margin-right: 2em;
-  margin-top: 3em;
+  width: 100%;
 }
 
 #image{
@@ -123,6 +121,7 @@ input::placeholder{
   color: #ff9e00;
   font-weight: bold;
   font-size: 15px;
+  text-decoration: none;
 }
 
 footer{

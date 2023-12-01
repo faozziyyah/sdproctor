@@ -45,9 +45,19 @@ const ImageCapture = () => {
   };
 
   return (
-    <div>
-      <video id="video" ref={videoRef} autoPlay playsInline muted></video>
-      <button id="captureBtn" onClick={captureImage}>Capture Image</button>
+    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+
+      <video id="video" ref={videoRef} autoPlay playsInline muted width="400"></video>
+
+      <button id="captureBtn" 
+        onClick={captureImage} 
+        style={{display: 'flex', justifyContent: 'center', alignItems: 'center', 
+                border: 'none', outline: 'none', marginTop: '2em', 
+                backgroundColor: '#03045e', color: '#fff', padding: '1em', 
+                borderRadius: '8px', marginBottom: '2em'
+        }}
+      >
+        Capture Image</button>
     </div>
   );
 };

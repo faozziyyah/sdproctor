@@ -89,8 +89,14 @@ const Login = () => {
 
         <aside className='register-left'>
 
-            <img src={logo} alt='logo' id='logo' />
+            <Link to="/" style={{display: 'flex', justifyContent: 'center', alignItems: 'center',
+                 width: '20%', alignSelf: 'end', marginTop: '2em'
+            }}>
+                <img src={logo} alt='logo' id='logo' />
+            </Link>
+            
             <img src={image} alt='' id='image' />
+
         </aside>
 
     </div>

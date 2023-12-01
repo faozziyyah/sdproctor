@@ -2,18 +2,14 @@ import React,{ useState } from 'react'
 import axios from "axios";
 import logo from '../images/logo.png'
 import image from '../images/Sign up-rafiki (1) 1.png'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 //import { Link } from 'react-router-dom'
 
 const Register = () => {
 
     const navigate = useNavigate();
 
-    const [state, setState] = useState({
-      name: "",
-      email: "",
-      password: ""
-    });
+    const [state, setState] = useState({ name: "", email: "", password: "" });
 
     const handleChange = (e) => {
       const value = e.target.value;
@@ -43,7 +39,7 @@ const Register = () => {
 
         <h2>registration</h2>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={{marginTop: '-1em'}}>
 
             <fieldset>
                 <legend>Name</legend>
@@ -81,14 +77,22 @@ const Register = () => {
 
             <button className='register-btn' type='submit'>Proceed</button>
 
+            <p className='enquiry'>Already Registered ? <Link to='/login' style={{color: '#E91818'}}>Login</Link></p>
+
         </form>
 
         </section>
 
         <aside className='register-left'>
 
-            <img src={logo} alt='logo' id='logo' />
+            <Link to="/" style={{display: 'flex', justifyContent: 'center', alignItems: 'center',
+                 width: '20%', alignSelf: 'end', marginTop: '2em'
+            }}>
+                <img src={logo} alt='logo' id='logo' />
+            </Link>
+
             <img src={image} alt='' id='image' />
+
         </aside>
 
     </div>

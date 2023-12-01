@@ -20,10 +20,7 @@ const Navbar = () => {
             <Link to='/exam' className='link'>Why SD Proctor</Link>
             <Link to='/' className='link'>About</Link>
             <Link to='/' className='link' id='contact'>Contact</Link>
-            {/* <Link to="/logout" className='link' onClick={()=>logoutAction()}>Logout</Link>  */}
-            <Link to="/login" className='link'>Login</Link>
-            
-            {/* <Link to='/register' className='link'>Register</Link> */}
+            <Link to="/register" className='link'>Register</Link>
 
 
         </nav>
