@@ -1,5 +1,5 @@
 import React,{ useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from "axios";
 import logo from '../images/logo.png'
 import image from '../images/Computer login-rafiki 1.png'
@@ -81,7 +81,7 @@ const Login = () => {
 
             <button type='submit' className='login-btn'>Login</button>
 
-            <p className='enquiry'>Don't have an account ? <a href='http'>Register</a></p>
+            <p className='enquiry'>Don't have an account ? <Link to='/register'>Register</Link></p>
 
         </form>
 

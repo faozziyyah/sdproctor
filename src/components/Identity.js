@@ -1,7 +1,8 @@
 import React from 'react'
 import logo from '../images/logo.png'
 import image from '../images/Speed test-rafiki (1) 1.png'
-import image1 from '../images/uil_capture.png'
+//import image1 from '../images/uil_capture.png'
+import { ImageCapture } from './Capturing'
 
 const Identity = () => {
   return (
@@ -10,8 +11,7 @@ const Identity = () => {
 
         <section className='identity'>
 
-            <img src={image1} alt='' id='image1' />
-
+            <ImageCapture />
             <p className='verifyp'>Verify Your Identity</p>
 
         </section>

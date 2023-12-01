@@ -2,9 +2,12 @@ import React,{ useState } from 'react'
 import axios from "axios";
 import logo from '../images/logo.png'
 import image from '../images/Sign up-rafiki (1) 1.png'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 
 const Register = () => {
+
+    const navigate = useNavigate();
 
     const [state, setState] = useState({
       name: "",
@@ -29,6 +32,7 @@ const Register = () => {
       };
       axios.post("https://demo.schautomate.com.ng/api/users/register", userData).then((response) => {
         console.log(response, response.data);
+        navigate("/identification")
       });
     };
 
@@ -75,7 +79,7 @@ const Register = () => {
 
             {/* <Link className='register-btn' to='/identification'>Register</Link> */}
 
-            <button className='register-btn' type='submit'>Register</button>
+            <button className='register-btn' type='submit'>Proceed</button>
 
         </form>
 
