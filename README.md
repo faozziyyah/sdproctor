@@ -1,10 +1,91 @@
-# Getting Started with Create React App
+# SDProctor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Exam proctoring website bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- Create an account and face capture
+- Login and face validation
+- Take exams
+- Be monitored via camera when taking the exams (proctoring)
+- Ensure that no one is impersonating
+- Navigate to the cart page
+
+### Screenshot
+
+![](src/images/Desktop3.png)
+![](src/Images/Desktop6.png)
+![](src/Images/Desktop7.png)
+
+### Links
+
+- Solution URL: (https://github.com/faozziyyah/sdproctor)
+- Live Site URL: (coming up soon)
+
+## My process
+### Built with
+
+- CSS
+- [React](https://reactjs.org/) - React: JS library
+- [React-webcam](https://github.com/mozmorris/react-webcam) - React Library
+- [React-paginate](https://github.com/AdeleD/react-paginate) - React Library for pagination
+- [Ant-design](https://ant.design/)
+
+### What I learned
+
+- React Authentication and Authorization
+- Consuming backend and ML APIs
+
+```React.js
+useEffect(() => {
+    const setupCamera = async () => {
+      const video = videoRef.current;
+
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+      } catch (error) {
+        console.error('Error accessing camera:', error);
+      }
+    };
+
+    setupCamera();
+  }, []);
+```
+```React.js
+  const offset = currentPage * n;
+  const paginatedData = questions.slice(offset, offset + n);
+
+  const navigate = useNavigate()
+
+  function logout () {
+    localStorage.clear()
+    navigate('/')
+  }
+```
+
+### Useful resources
 
 In the project directory, you can run:
+
+### `npm install` 
+
+then...
 
 ### `npm start`
 
@@ -13,58 +94,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
