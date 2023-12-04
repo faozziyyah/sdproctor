@@ -29,8 +29,8 @@ Users should be able to:
 ### Screenshot
 
 ![](src/images/Desktop3.png)
-![](src/Images/Desktop6.png)
-![](src/Images/Desktop7.png)
+![](src/images/Desktop6.png)
+![](src/images/Desktop7.png)
 
 ### Links
 
