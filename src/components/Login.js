@@ -39,6 +39,11 @@ const Login = () => {
           console.log(response, response.data.token);
           console.log(document.cookie)
           localStorage.setItem('user-info', JSON.stringify(response))
+
+          // Check if the user is an admin based on their role or other criteria
+          const isAdmin = userData.role === 'admin';
+          console.log('Is Admin:', isAdmin);
+          
           navigate("/exam")
         })
         .catch((error) => {
@@ -64,7 +69,7 @@ const Login = () => {
 
             <fieldset>
                 <legend>Username</legend>
-                <input type='email' 
+                <input type='' 
                     placeholder='Enter your email address here' 
                     name='username' value={data.username} 
                     required

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Radio, Space } from 'antd';
 import ReactPaginate from 'react-paginate';
-import image from '../images/Ellipse 1.png'
-import circle from '../images/Ellipse 3.png'
+import image from '../../images/Ellipse 1.png'
+import circle from '../../images/Ellipse 3.png'
 import { useNavigate } from 'react-router-dom'
 //import videocam from '../images/fluent_video-48-regular.png'
 import './Exam.css';
@@ -46,29 +46,6 @@ const Exam = () => {
       setQuestions(data);
       //setTotalPages(Math.ceil(data.length / n))
     };
-
-    //const getQuestions = async () => {
-
-    //  try {
-
-    //    const response = await fetch( 'https://localhost:3000/api/data', {
-    //        method: 'GET',
-    //        credentials: 'include',
-    //        headers: {
-    //            "content-type": "application/json",
-    //        }
-    //    })
-    //    const data = await response.json();
-    //    console.log(data)
-    //    setQuestions(data);
-    //    //.then(response => response.json())
-    //    //.then(response => console.log(response))
-    //    //.then(response => setQuestions(response))
-    //    
-    //  } catch (error) {
-    //    console.log(error)
-    //  }
-    //}
 
     getQuestions();
 

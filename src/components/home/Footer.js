@@ -1,8 +1,8 @@
 import React from 'react'
-import logo from '../images/logo.png'
-import whatsapp from '../images/Layer_1.png'
-import phone from '../images/pepicons-pop_phone-circle.png'
-import mail from '../images/Group 46.png'
+import logo from '../../images/logo.png'
+import whatsapp from '../../images/Layer_1.png'
+import phone from '../../images/pepicons-pop_phone-circle.png'
+import mail from '../../images/Group 46.png'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
