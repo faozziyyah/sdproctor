@@ -12,7 +12,9 @@ const Login = () => {
 
     useEffect(() => {
       if (localStorage.getItem('user-info')) {
-        navigate("/exam")
+        //navigate("/exam")
+        //const userData = localStorage.getItem('user-info')
+        //alert(userData)
       }
     }, [])
 
@@ -35,6 +37,7 @@ const Login = () => {
         .then((response) => {
           //console.log(response.status, response.data.token);
           console.log(response, response.data.token);
+          console.log(document.cookie)
           localStorage.setItem('user-info', JSON.stringify(response))
           navigate("/exam")
         })

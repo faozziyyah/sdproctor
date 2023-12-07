@@ -1,10 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const ImageCapture = () => {
+  
   const videoRef = useRef(null);
 
+  const userData = localStorage.getItem('user-info')
+  //console.log(userData)
+  const userdetail = JSON.parse(userData)
+  const userId = userdetail.data.userdata.id
+ // alert(userId)
+
     // Assuming 'id' is a state variable
-    const [id, setId] = useState(4);
+    const [id, setId] = useState(userId);
 
   useEffect(() => {
     const setupCamera = async () => {
@@ -32,7 +39,7 @@ const ImageCapture = () => {
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
     var imageName = 'user_' + id;
-    alert(imageName);
+    //alert(imageName);
 
     const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg'));
     const formData = new FormData();

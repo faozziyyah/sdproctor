@@ -7,9 +7,14 @@ import { useNavigate } from 'react-router-dom'
 //import videocam from '../images/fluent_video-48-regular.png'
 import './Exam.css';
 import { Timer } from './Timer';
-import { ImageCapture } from './Capturing';
+import { ImageUpload } from './ImageUpload';
 
 const Exam = () => {
+
+  const userData = localStorage.getItem('user-info')
+  //console.log(userData)
+  const userdetail = JSON.parse(userData)
+  const userId = userdetail.data.userdata.name
 
   const [value, setValue] = useState(1);
 
@@ -37,9 +42,33 @@ const Exam = () => {
         'https://demo.schautomate.com.ng/api/exam'
       );
       const data = await response.json();
+      console.log(data)
       setQuestions(data);
       //setTotalPages(Math.ceil(data.length / n))
     };
+
+    //const getQuestions = async () => {
+
+    //  try {
+
+    //    const response = await fetch( 'https://localhost:3000/api/data', {
+    //        method: 'GET',
+    //        credentials: 'include',
+    //        headers: {
+    //            "content-type": "application/json",
+    //        }
+    //    })
+    //    const data = await response.json();
+    //    console.log(data)
+    //    setQuestions(data);
+    //    //.then(response => response.json())
+    //    //.then(response => console.log(response))
+    //    //.then(response => setQuestions(response))
+    //    
+    //  } catch (error) {
+    //    console.log(error)
+    //  }
+    //}
 
     getQuestions();
 
@@ -80,7 +109,7 @@ const Exam = () => {
         <div className='header-left'>
 
           <img src={image} alt='' />
-          <p>welcome Adebimpe</p>
+          <p>{userId}</p>
 
         </div>
 
@@ -125,7 +154,7 @@ const Exam = () => {
           </div>
           
           <div className='body-right'>
-            <ImageCapture />
+            <ImageUpload />
           </div>
 
         </div>
