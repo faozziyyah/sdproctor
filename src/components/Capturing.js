@@ -4,16 +4,16 @@ const ImageCapture = () => {
   
   const videoRef = useRef(null);
 
-  const userData = localStorage.getItem('user-info')
+  const userData = localStorage.getItem('signup-id')
   //console.log(userData)
   const userdetail = JSON.parse(userData)
-  const userId = userdetail.data.userdata.id
- // alert(userId)
+  const userId = userdetail.data.id
 
     // Assuming 'id' is a state variable
     const [id, setId] = useState(userId);
 
   useEffect(() => {
+
     const setupCamera = async () => {
       const video = videoRef.current;
 
@@ -39,7 +39,7 @@ const ImageCapture = () => {
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
     var imageName = 'user_' + id;
-    //alert(imageName);
+    alert("image captured");
 
     const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg'));
     const formData = new FormData();

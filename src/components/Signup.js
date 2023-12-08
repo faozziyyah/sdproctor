@@ -28,7 +28,8 @@ const Register = () => {
       };
       axios.post("https://demo.schautomate.com.ng/api/users/register", userData).then((response) => {
         console.log(response, response.data);
-        localStorage.setItem('user-info', JSON.stringify(response))
+        localStorage.setItem('signup-id', JSON.stringify(response))
+
         navigate("/identification")
       });
     };

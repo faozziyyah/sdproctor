@@ -42,7 +42,7 @@ const Exam = () => {
         'https://demo.schautomate.com.ng/api/exam'
       );
       const data = await response.json();
-      console.log(data)
+      //console.log(data)
       setQuestions(data);
       //setTotalPages(Math.ceil(data.length / n))
     };

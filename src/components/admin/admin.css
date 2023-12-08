@@ -54,6 +54,38 @@
     text-align: left;
 }
 
-tbody{
-   margin-top: 5em;
+#action{
+   display: flex;
+   justify-content: space-between;
+}
+
+#delete-btn, #edit-btn{
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 1em;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+#delete-btn{
+    background-color: #E91818;
+    color: #ffffff;
+}
+
+#edit-btn{
+    background-color: #ff9e00;
+    color: #03045e;
+}
+
+.user-container > h1{
+    color: #03045e;
+    font-size: 30px;
+}
+
+#tr{
+    color: #03045e;
+    font-weight: 600;
 }
