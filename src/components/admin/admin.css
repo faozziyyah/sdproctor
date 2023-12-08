@@ -1,14 +1,59 @@
-.user-container{
+#aside{
     display: flex;
-    justify-content: space-between;
     height: 100vh;
 }
 
-#aside{
+.tabs{
     background-color: #03045e;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 15%;
     height: 100vh;
+}
+
+.tab-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    margin-top: -15em;
+}
+
+.tab-nav h2{
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: all 0.7s;
+}
+.tab-nav h2:hover {
+  background: rgba(50, 224, 196, 0.15);
+}
+.tab-nav h2.active {
+  background: #ff9e00;
+  border-radius: 5px;
+  padding: 10px 1em;
+}
+
+.tab-outlet{
+    width: 85%;
+}
+
+.user-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    padding: 1em;
+}
+
+.user-container > table {
+    text-align: left;
+}
+
+tbody{
+   margin-top: 5em;
 }

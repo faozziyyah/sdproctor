@@ -8,7 +8,7 @@ import { Upload } from './components/Upload';
 import { Verify } from './components/Verify';
 import { Home } from './components/home/Home';
 import { Exam } from './components/user/Exam';
-import { Users } from './components/admin/Users';
+import { Aside } from './components/admin/Aside';
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         <Route path='/upload' element={<Upload />} />
         <Route path='/verify' element={<Verify />} />
         <Route path='/exam' element={<Exam />} />
-        <Route path='/users' element={<Users />} />
+        <Route path='/admin' element={<Aside />} />
       </Routes>
     </>
   );

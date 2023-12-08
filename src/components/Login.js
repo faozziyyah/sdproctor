@@ -35,16 +35,21 @@ const Login = () => {
       axios
         .post("https://demo.schautomate.com.ng/login", userData)
         .then((response) => {
-          //console.log(response.status, response.data.token);
+          
           console.log(response, response.data.token);
-          console.log(document.cookie)
+          //console.log(document.cookie)
           localStorage.setItem('user-info', JSON.stringify(response))
 
-          // Check if the user is an admin based on their role or other criteria
-          const isAdmin = userData.role === 'admin';
-          console.log('Is Admin:', isAdmin);
-          
-          navigate("/exam")
+          const userData = localStorage.getItem('user-info')
+
+          const userdetail = JSON.parse(userData)
+
+          if (userdetail.data.type === 'admin') {
+            navigate("/admin")
+          } else {
+            navigate("/exam")
+          }
+
         })
         .catch((error) => {
           if (error.response) {
