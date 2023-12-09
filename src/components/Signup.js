@@ -1,4 +1,4 @@
-import React,{ useState } from 'react'
+import React, {useState} from 'react'
 import axios from "axios";
 import logo from '../images/logo.png'
 import image from '../images/Sign up-rafiki (1) 1.png'
@@ -11,42 +11,12 @@ const Register = () => {
 
     const [state, setState] = useState({ name: "", email: "", password: "" });
 
-    const [errors, setErrors] = useState({ email: "", password: "" });
-
-    const [isFormValid, setIsFormValid] = useState(false);
-
-    const [confirmPassword, setConfirmPassword] = useState("");
-
     const handleChange = (e) => {
-
-      const { name, value } = e.target;
-
+      const value = e.target.value;
       setState({
         ...state,
-        [name]: value,
+        [e.target.name]: value
       });
-
-      if (name === "confirmPassword") {
-        setConfirmPassword(value);
-      }
-
-      // Password matching validation
-      if (name === "password" || name === "confirmPassword") {
-        setErrors((prevErrors) => ({
-          ...prevErrors,
-          password: state.password !== confirmPassword ? "Passwords do not match" : "",
-        }));
-      }
-
-      // Password matching validation
-      const passwordsMatch = state.password === confirmPassword;
-      
-      // Check if any field is empty
-      const isAnyFieldEmpty = Object.values(state).some((field) => field.trim() === "");
-    
-      // Update form validity
-      setIsFormValid(!isAnyFieldEmpty && passwordsMatch);
-      
     };
 
     const handleSubmit = (e) => {
@@ -102,16 +72,12 @@ const Register = () => {
 
             <fieldset>
                 <legend>Confirm Password</legend>
-                <input type='text' placeholder='Confirm Password' 
-                  name="confirmPassword"
-                  value={confirmPassword}
-                  onChange={handleChange}
-                />
+                <input type='text' placeholder='Confirm Password' />
             </fieldset>
 
             {/* <Link className='register-btn' to='/identification'>Register</Link> */}
 
-            <button className='register-btn' type='submit' disabled={!isFormValid}>Proceed</button>
+            <button className='register-btn' type='submit'>Proceed</button>
 
             <p className='enquiry'>Already Registered ? <Link to='/login' style={{color: '#E91818'}}>Login</Link></p>
 

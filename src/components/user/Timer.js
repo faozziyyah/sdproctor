@@ -1,40 +1,44 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'
 
-const Timer = ({ initialMinute = 1, initialSeconds = 0 }) => {
-    
-	const [ minutes, setMinutes ] = useState(initialMinute);
-	const [ seconds, setSeconds ] = useState(initialSeconds);
-	useEffect(() => {
-		let myInterval = setInterval(() => {
-			if (seconds > 0) {
-				setSeconds(seconds - 1);
-			}
-			if (seconds === 0) {
-				if (minutes === 0) {
-					clearInterval(myInterval);
-				} else {
-					setMinutes(minutes - 1);
-					setSeconds(59);
-				}
-			}
-		}, 1000);
-		return () => {
-			clearInterval(myInterval);
-		};
-	});
+const CountdownTimer = (logout) => {
+  const [minutes, setMinutes] = useState(3);
+  const [seconds, setSeconds] = useState(0);
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+
+    const countdownInterval = setInterval(() => {
+      if (seconds > 0) {
+        setSeconds(seconds - 1);
+      } else if (minutes > 0) {
+        setMinutes(minutes - 1);
+        setSeconds(59);
+      } else {
+        clearInterval(countdownInterval);
+        // Optionally, you can perform some action when the countdown reaches zero.
+        //console.log('Countdown reached zero!');
+        // Perform logout action when the countdown reaches zero
+
+  		function logout () {
+  		  localStorage.clear()
+  		  navigate('/')
+  		}
+      }
+    }, 1000);
+
+    // Cleanup the interval on component unmount
+    return () => clearInterval(countdownInterval);
+  }, [minutes, seconds, logout]);
 
   return (
+    <div>
+      <p>
+        {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
+      </p>
+    </div>
+  );
+};
 
-	<React.Fragment>
-		{minutes === 0 && seconds === 0 ? null : (
-			<p className="title-heading">
-				{' '}
-				{minutes + `minutes`}:{seconds < 10 ? `0${seconds}` : seconds + `seconds`}
-			</p>
-		)}
-	</React.Fragment>
-
-  )
-}
-
-export {Timer}
+export {CountdownTimer};

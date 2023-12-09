@@ -64,6 +64,7 @@
   padding: 1em;
   font-size: 15px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .register-btn{

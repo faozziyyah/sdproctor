@@ -6,7 +6,7 @@ import circle from '../../images/Ellipse 3.png'
 import { useNavigate } from 'react-router-dom'
 //import videocam from '../images/fluent_video-48-regular.png'
 import './Exam.css';
-import { Timer } from './Timer';
+import { CountdownTimer } from './Timer';
 import { ImageUpload } from './ImageUpload';
 
 const Exam = () => {
@@ -86,13 +86,13 @@ const Exam = () => {
         <div className='header-left'>
 
           <img src={image} alt='' />
-          <p>{userId}</p>
+          <p>Welcome {userId}</p>
 
         </div>
 
         <div className='header-right'>
 
-				  <Timer initialMinute={duration} />
+				  <CountdownTimer onLogout={logout} />
           <button className='btn-logout' onClick={logout}>Log out</button>
 
         </div>

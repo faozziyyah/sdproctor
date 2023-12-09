@@ -34,7 +34,7 @@ const Exams = () => {
       });
 
       if (response.ok) {
-        console.log('Question added successfully');
+        alert('Question added successfully');
         // Reset the form or perform any other actions after successful addition
         setQuestionData({
           question: '',

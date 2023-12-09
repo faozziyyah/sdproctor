@@ -75,7 +75,7 @@ const Users = () => {
                         <tr key={id} id='tr'>
                             <td style={{ marginTop: '10em' }}>{user.name}</td>
                             <td>{user.email}</td>
-                            <td>{user.type}</td>
+                            <td>Users</td>
                             <td>{user.status}</td>
                             <td id='action'>
                               <button id='delete-btn' onClick={() => deleteUser(user.id)}>Delete</button>

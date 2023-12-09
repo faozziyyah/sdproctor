@@ -34,6 +34,7 @@ const ImageUpload = () => {
   }, [id]); // Include 'id' in the dependency array to capture changes
 
   const captureImage = async () => {
+
     const video = videoRef.current;
     const canvas = document.createElement('canvas');
     const context = canvas.getContext('2d');
@@ -43,7 +44,7 @@ const ImageUpload = () => {
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
     var imageName = 'user_' + id + '_check';
-    alert(imageName);
+    //alert(imageName);
 
     const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg'));
     const formData = new FormData();
@@ -53,6 +54,23 @@ const ImageUpload = () => {
       method: 'POST',
       body: formData,
     });
+
+    const response = fetch(`https://demo.schautomate.com.ng/api/users/verification/${id}`, {
+      method: 'GET',
+    });
+
+    // Assuming response is a Promise
+    response.then(res => {
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+      return res.json();
+    }).then(data => {
+      console.log(data); // This will log the JSON response
+    }).catch(error => {
+      console.error('Error:', error);
+    });
+
   };
 
   return (
