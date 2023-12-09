@@ -42,7 +42,7 @@
     width: 85%;
 }
 
-.user-container{
+.user-container, .exams-container{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -80,12 +80,79 @@
     color: #03045e;
 }
 
-.user-container > h1{
+.user-container > h1, .exams-container > h1{
     color: #03045e;
     font-size: 30px;
+    margin-top: -8px;
 }
 
 #tr{
     color: #03045e;
     font-weight: 600;
+}
+
+.exams-container input{
+    border: none;
+    outline: none;
+    background-color: #D9D9D9;
+    color: #03045e;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.exams-container input::placeholder{
+    color: #03045e;
+}
+
+.exams-container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1em;
+}
+
+.exams-container label{
+    color: #03045e;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+    height: 150px;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 1em;
+}
+
+.options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin-top: 1em;
+}
+
+#label{
+    margin-top: 1em;
+}
+
+#exambtn{
+    border: none;
+    outline: none;
+    background-color: #ff9e00;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 10px 1em;
+    border-radius: 5px;
 }

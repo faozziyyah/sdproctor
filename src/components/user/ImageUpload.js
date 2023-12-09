@@ -42,8 +42,8 @@ const ImageUpload = () => {
 
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-    var imageName = 'user_' + id;
-    alert(imageName + "_check");
+    var imageName = 'user_' + id + '_check';
+    alert(imageName);
 
     const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg'));
     const formData = new FormData();

@@ -60,7 +60,7 @@ const Users = () => {
         <table style={{ borderSpacing: "30px"}}>
         
             <thead>
-              <tr>
+              <tr style={{color: '#03045E'}}>
                 <th style={{width: '25%'}}>Name</th>
                 <th style={{width: '30%'}}>Email</th>
                 <th>Role</th>
