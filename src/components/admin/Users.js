@@ -64,7 +64,6 @@ const Users = () => {
                 <th style={{width: '25%'}}>Name</th>
                 <th style={{width: '30%'}}>Email</th>
                 <th>Role</th>
-                <th>Status</th>
                 <th style={{width: '20%'}}>Action</th>
               </tr>
             </thead>
@@ -76,7 +75,6 @@ const Users = () => {
                             <td style={{ marginTop: '10em' }}>{user.name}</td>
                             <td>{user.email}</td>
                             <td>Users</td>
-                            <td>{user.status}</td>
                             <td id='action'>
                               <button id='delete-btn' onClick={() => deleteUser(user.id)}>Delete</button>
                             </td>

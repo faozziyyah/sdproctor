@@ -13,7 +13,7 @@ const Verify = () => {
 
             <img src={image1} alt='' id='image1' />
 
-            <p className='verifyp'>Identity Verified</p>
+            <Link to='/login' className='verifyp'> Identity Verified</Link>
 
         </section>
 
