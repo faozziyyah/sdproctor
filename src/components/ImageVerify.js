@@ -47,8 +47,6 @@ const ImageVerify = () => {
     
         var imageName = 'user_' + id + "_check";
         //alert(imageName)
-        
-        navigate('/verify')
     
         const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg'));
         const formData = new FormData();
@@ -74,9 +72,11 @@ const ImageVerify = () => {
 
           console.log(data); 
 
-          const unknownFaces = data["unknown faces"];
+          const userFound = data["user found"];
     
-          if (unknownFaces > 0) {
+          if (userFound === true) {
+            navigate('/verify')
+          } else {
             navigate('/logout')
           }
           //console.log(unknownFaces)
