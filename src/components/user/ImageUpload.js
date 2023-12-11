@@ -44,7 +44,7 @@ const ImageUpload = () => {
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
     var imageName = 'user_' + id + '_check';
-    alert(imageName);
+    //alert(imageName);
 
     const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg'));
     const formData = new FormData();
@@ -67,6 +67,8 @@ const ImageUpload = () => {
       return res.json();
     }).then(data => {
       console.log(data); // This will log the JSON response
+      const faceCount = data.message;
+      console.log(faceCount)
     }).catch(error => {
       console.error('Error:', error);
     });

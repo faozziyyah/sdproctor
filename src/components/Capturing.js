@@ -4,7 +4,7 @@ const ImageCapture = () => {
   
   const videoRef = useRef(null);
 
-  const userData = localStorage.getItem('signup-id')
+  const userData = localStorage.getItem('user-info')
   //console.log(userData)
   const userdetail = JSON.parse(userData)
   const userId = userdetail.data.id
