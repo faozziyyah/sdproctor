@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 
-const CountdownTimer = (logout) => {
+const CountdownTimer = () => {
   const [minutes, setMinutes] = useState(3);
   const [seconds, setSeconds] = useState(0);
 
@@ -17,20 +17,15 @@ const CountdownTimer = (logout) => {
         setSeconds(59);
       } else {
         clearInterval(countdownInterval);
-        // Optionally, you can perform some action when the countdown reaches zero.
-        //console.log('Countdown reached zero!');
         // Perform logout action when the countdown reaches zero
-
-  		function logout () {
-  		  localStorage.clear()
-  		  navigate('/')
-  		}
+        navigate('/login')
       }
     }, 1000);
 
     // Cleanup the interval on component unmount
     return () => clearInterval(countdownInterval);
-  }, [minutes, seconds, logout]);
+    
+  }, [minutes, seconds]);
 
   return (
     <div>

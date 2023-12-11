@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import './Exam.css';
 import { CountdownTimer } from './Timer';
 import { ImageUpload } from './ImageUpload';
+import { Logout } from '../Logout';
 
 const Exam = () => {
 
@@ -67,13 +68,6 @@ const Exam = () => {
 
   //console.log(questions);
 
-  const navigate = useNavigate()
-
-  function logout () {
-    localStorage.clear()
-    navigate('/')
-  }
-
   return (
     <div className='exam-container'>
 
@@ -92,8 +86,8 @@ const Exam = () => {
 
         <div className='header-right'>
 
-				  <CountdownTimer onLogout={logout} />
-          <button className='btn-logout' onClick={logout}>Log out</button>
+				  <CountdownTimer />
+          <Logout />
 
         </div>
 

@@ -1,16 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 
 const ImageCapture = () => {
+
+  const navigate = useNavigate()
   
   const videoRef = useRef(null);
 
-  const userData = localStorage.getItem('user-info')
+  const userData = localStorage.getItem('signup-id')
   //console.log(userData)
   const userdetail = JSON.parse(userData)
   const userId = userdetail.data.id
 
     // Assuming 'id' is a state variable
     const [id, setId] = useState(userId);
+    console.log(id)
 
   useEffect(() => {
 
@@ -39,7 +43,10 @@ const ImageCapture = () => {
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
     var imageName = 'user_' + id;
+    //alert(imageName);
     alert("image captured");
+        
+    navigate('/login')
 
     const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg'));
     const formData = new FormData();
@@ -61,7 +68,7 @@ const ImageCapture = () => {
         style={{display: 'flex', justifyContent: 'center', alignItems: 'center', 
                 border: 'none', outline: 'none', marginTop: '2em', 
                 backgroundColor: '#03045e', color: '#fff', padding: '1em', 
-                borderRadius: '8px', marginBottom: '2em'
+                borderRadius: '8px', marginBottom: '2em', cursor: 'pointer'
         }}
       >
         Capture Image</button>

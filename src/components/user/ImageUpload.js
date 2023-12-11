@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ImageUpload = () => {
+
+  const navigate = useNavigate()
+
   const videoRef = useRef(null);
   const userData = localStorage.getItem('user-info');
   const userdetail = JSON.parse(userData);
@@ -61,16 +65,25 @@ const ImageUpload = () => {
 
     // Assuming response is a Promise
     response.then(res => {
+
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);
       }
       return res.json();
+
     }).then(data => {
+
       console.log(data); // This will log the JSON response
-      const faceCount = data.message;
-      console.log(faceCount)
+      const unknownFaces = data["unknown faces"];
+
+      if (unknownFaces > 0) {
+        navigate('/logout')
+      }
+      console.log(unknownFaces)
+
     }).catch(error => {
       console.error('Error:', error);
+
     });
 
   };

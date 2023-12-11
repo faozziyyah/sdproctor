@@ -72,7 +72,7 @@ const Register = () => {
 
             <fieldset>
                 <legend>Confirm Password</legend>
-                <input type='text' placeholder='Confirm Password' />
+                <input type='password' placeholder='Confirm Password' />
             </fieldset>
 
             {/* <Link className='register-btn' to='/identification'>Register</Link> */}

@@ -14,7 +14,7 @@ const Identity = () => {
 
             <ImageCapture />
 
-            <Link to='/login' className='verifyp'>Verify Your Identity</Link>
+            <p className='verifyp'>Verify Your Identity</p>
 
         </section>
 

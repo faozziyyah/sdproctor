@@ -9,6 +9,7 @@ import { Verify } from './components/Verify';
 import { Home } from './components/home/Home';
 import { Exam } from './components/user/Exam';
 import { Aside } from './components/admin/Aside';
+import { Logout } from './components/Logout';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/verify' element={<Verify />} />
         <Route path='/exam' element={<Exam />} />
         <Route path='/admin' element={<Aside />} />
+        <Route path='/logout' element={<Logout />} />
       </Routes>
     </>
   );

@@ -1,9 +1,9 @@
 import React from 'react'
 import logo from '../images/logo.png'
-import { ImageCapture } from './Capturing'
 import image from '../images/Online test-amico 1.png'
 //import image1 from '../images/Group.png'
 import { Link } from 'react-router-dom'
+import { ImageVerify } from './ImageVerify'
 
 const Auth = () => {
   return (
@@ -12,9 +12,9 @@ const Auth = () => {
 
         <section className='identity'>
 
-            <ImageCapture />
+            <ImageVerify />
 
-            <Link to='/verify' className='verifyp'>Face Authentication</Link>
+           {/* <Link to='/verify' className='verifyp'>Face Authentication</Link> */}
 
         </section>
 
