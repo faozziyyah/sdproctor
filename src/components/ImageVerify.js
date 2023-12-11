@@ -48,7 +48,7 @@ const ImageVerify = () => {
         var imageName = 'user_' + id + "_check";
         //alert(imageName)
         
-        //navigate('/verify')
+        navigate('/verify')
     
         const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg'));
         const formData = new FormData();
