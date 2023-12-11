@@ -47,7 +47,7 @@ const Login = () => {
           if (userdetail.data.type === 'admin') {
             navigate("/admin")
           } else {
-            navigate("/exam")
+            navigate("/authentication")
           }
 
         })
