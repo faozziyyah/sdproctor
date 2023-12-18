@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: (https://github.com/faozziyyah/sdproctor)
-- Live Site URL: (coming up soon)
+- Live Site URL: (https://sdproctor.github.io/sdproctor/)
 
 ## My process
 ### Built with
